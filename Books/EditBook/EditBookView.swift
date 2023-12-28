@@ -3,9 +3,6 @@ import SwiftUI
 struct EditBookView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: EditBookViewModel
-    init(book: Book) {
-        viewModel = EditBookViewModel(book: book)
-    }
     var body: some View {
         VStack(alignment: .leading) {
             statusView
@@ -110,7 +107,7 @@ struct EditBookView: View {
 #Preview {
     let preview = Preview(Book.self)
     return NavigationStack {
-        EditBookView(book: Book.sampleBooks[4])
+        EditBookView(viewModel: EditBookViewModel(book: Book.sampleBooks[4]))
             .modelContainer(preview.container)
     }
 }
