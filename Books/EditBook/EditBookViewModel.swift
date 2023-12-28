@@ -13,7 +13,7 @@ final class EditBookViewModel: ObservableObject {
     @Published var rating: Int?
     @Published var title = "title"
     @Published var author = ""
-    @Published var summary = ""
+    @Published var sinopsis = ""
     @Published var dateAdded = Date.distantPast
     @Published var dateStarted = Date.distantPast
     @Published var dateCompleted = Date.distantPast
@@ -25,7 +25,7 @@ final class EditBookViewModel: ObservableObject {
         rating = book.rating
         title = book.title
         author = book.author
-        summary = book.summary
+        sinopsis = book.sinopsis
         dateAdded = book.dateAdded
         dateStarted = book.dateStarted
         dateCompleted = book.dateCompleted
@@ -36,7 +36,7 @@ final class EditBookViewModel: ObservableObject {
         book.rating = rating
         book.title = title
         book.author = author
-        book.summary = summary
+        book.sinopsis = sinopsis
         book.dateAdded = dateAdded
         book.dateStarted = dateStarted
         book.dateCompleted = dateCompleted
@@ -47,7 +47,7 @@ final class EditBookViewModel: ObservableObject {
         || rating != book.rating
         || title != book.title
         || author != book.author
-        || summary != book.summary
+        || sinopsis != book.sinopsis
         || dateAdded != book.dateAdded
         || dateStarted != book.dateStarted
         || dateCompleted != book.dateCompleted

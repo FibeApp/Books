@@ -48,7 +48,7 @@ struct EditBookView: View {
             Text("Summary")
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            TextEditor(text: $viewModel.summary)
+            TextEditor(text: $viewModel.sinopsis)
                 .padding(5)
         }
     }
