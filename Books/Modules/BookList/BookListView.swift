@@ -60,7 +60,10 @@ struct ExtractedView: View {
 
 #Preview {
     let preview = Preview(Book.self)
-    preview.addExamples(Book.sampleBooks)
+    let books = Book.samples
+    let genres = Genre.samples
+    preview.addExamples(books)
+    preview.addExamples(genres)
     return BookListView()
         .modelContainer(preview.container)
 }

@@ -3,7 +3,7 @@ import Foundation
 extension Book {
     static let lastWeek = Calendar.current.date(byAdding: .day, value: -7, to: Date.now) ?? Date()
     static let lastMonth = Calendar.current.date(byAdding: .month, value: -1, to: Date.now) ?? Date()
-    static var sampleBooks: [Book] {
+    static var samples: [Book] {
         [
             Book(title: "QBVII",
                  author: "Leon Uris"),
