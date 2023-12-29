@@ -24,7 +24,7 @@ struct BookList: View {
             } else {
                 List {
                     ForEach(books) { book in
-                        NavigationLink(destination: { EditBookView(book: book)}) {
+                        NavigationLink(value: book) {
                             ExtractedView(book: book)
                         }
                     }
@@ -37,6 +37,9 @@ struct BookList: View {
                 }
                 .listStyle(.plain)
             }
+        }
+        .navigationDestination(for: Book.self) { book in
+            EditBookView(viewModel: EditBookViewModel(book: book))
         }
 
     }
