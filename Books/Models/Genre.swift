@@ -3,8 +3,8 @@ import SwiftData
 
 @Model
 class Genre {
-    var name: String
-    var color: String
+    var name: String = ""
+    var color: String = "FF0000"
     var books: [Book]?
     init(name: String, color: String) {
         self.name = name
