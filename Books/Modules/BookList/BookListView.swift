@@ -39,11 +39,18 @@ struct ExtractedView: View {
     var body: some View {
         HStack(spacing: 10) {
             book.icon
-            VStack {
+            VStack(alignment: .leading) {
                 Text(book.title)
                     .font(.title2)
                 Text(book.author)
                     .foregroundStyle(.secondary)
+                if let genres = book.genres {
+                    ViewThatFits {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            GenreStackView(genres: genres)
+                        }
+                    }
+                }
                 if let rating = book.rating {
                     HStack {
                         ForEach(0..<rating, id: \.self) { _ in
