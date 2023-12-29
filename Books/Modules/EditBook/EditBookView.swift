@@ -3,9 +3,6 @@ import SwiftUI
 struct EditBookView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: EditBookViewModel
-    init(book: Book) {
-        viewModel = EditBookViewModel(book: book)
-    }
     var body: some View {
         VStack(alignment: .leading) {
             statusView
@@ -44,12 +41,27 @@ struct EditBookView: View {
             } label: {
                 Text("Author").foregroundStyle(.secondary)
             }
+            LabeledContent {
+                TextField("", text: $viewModel.recommendedBy)
+            } label: {
+                Text("Recommended By").foregroundStyle(.secondary)
+            }
             Divider()
-            Text("Summary")
+            Text("Sinopsis")
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            TextEditor(text: $viewModel.summary)
+            TextEditor(text: $viewModel.sinopsis)
                 .padding(5)
+            NavigationLink {
+                QuotesListView(viewModel: QuotesListViewModel(book: viewModel.book))
+            } label: {
+                let count = viewModel.book.quotes?.count ?? 0
+                Label("^[\(count) Quotes](inflect: true)", systemImage: "quote.opening")
+            }
+            .buttonStyle(.bordered)
+            .tint(.primary)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .padding(.horizontal)
         }
     }
 
@@ -95,14 +107,18 @@ struct EditBookView: View {
         .onChange(of: viewModel.status, viewModel.updateDates)
     }
     var statusView: some View {
-        HStack {
-            Text("Status")
-            Picker("Status", selection: $viewModel.status) {
-                ForEach(Status.allCases) { status in
-                    Text(status.title).tag(status)
+        GroupBox {
+            LabeledContent {
+                Picker("Status", selection: $viewModel.status) {
+                    ForEach(Status.allCases) { status in
+                        Text(status.title).tag(status)
+                    }
                 }
+                .buttonStyle(.bordered)
+                .tint(.primary)
+            } label: {
+                Text("Status")
             }
-            .buttonStyle(.bordered)
         }
     }
 }
@@ -110,7 +126,7 @@ struct EditBookView: View {
 #Preview {
     let preview = Preview(Book.self)
     return NavigationStack {
-        EditBookView(book: Book.sampleBooks[4])
+        EditBookView(viewModel: EditBookViewModel(book: Book.sampleBooks[4]))
             .modelContainer(preview.container)
     }
 }

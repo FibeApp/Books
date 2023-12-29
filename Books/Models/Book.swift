@@ -8,9 +8,12 @@ class Book {
     var dateAdded: Date
     var dateStarted: Date
     var dateCompleted: Date
-    var summary: String
+    var sinopsis: String
     var rating: Int?
     var status: Status.RawValue
+    var recommendedBy: String = ""
+    @Relationship(deleteRule: .cascade)
+    var quotes: [Quote]?
 
     init(
         title: String,
@@ -18,18 +21,20 @@ class Book {
         dateAdded: Date = Date.now,
         dateStarted: Date = Date.distantPast,
         dateCompleted: Date = Date.distantPast,
-        summary: String = "",
+        sinopsis: String = "",
         rating: Int? = nil,
-        status: Status = .onShelf
+        status: Status = .onShelf,
+        recommendedBy: String = ""
     ) {
         self.title = title
         self.author = author
         self.dateAdded = dateAdded
         self.dateStarted = dateStarted
         self.dateCompleted = dateCompleted
-        self.summary = summary
+        self.sinopsis = sinopsis
         self.rating = rating
         self.status = status.rawValue
+        self.recommendedBy = recommendedBy
     }
 
     var icon: Image {

@@ -38,12 +38,15 @@ struct BookList: View {
                 .listStyle(.plain)
             }
         }
+
     }
 }
 
 #Preview {
     let preview = Preview(Book.self)
     preview.addExamples(Book.sampleBooks)
-    return BookList(sortOrder: .status, filter: "")
+    return NavigationStack {
+        BookList(sortOrder: .status, filter: "")
+    }
         .modelContainer(preview.container)
 }
