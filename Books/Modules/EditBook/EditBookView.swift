@@ -3,6 +3,7 @@ import SwiftUI
 struct EditBookView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: EditBookViewModel
+    @State private var show = false
     var body: some View {
         VStack(alignment: .leading) {
             statusView
@@ -13,6 +14,9 @@ struct EditBookView: View {
         .textFieldStyle(.roundedBorder)
         .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $show) {
+            GenresView(book: viewModel.book)
+        }
         .toolbar {
             if viewModel.changed {
                 Button("Update") {
@@ -52,11 +56,23 @@ struct EditBookView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             TextEditor(text: $viewModel.sinopsis)
                 .padding(5)
-            NavigationLink {
-                QuotesListView(viewModel: QuotesListViewModel(book: viewModel.book))
-            } label: {
-                let count = viewModel.book.quotes?.count ?? 0
-                Label("^[\(count) Quotes](inflect: true)", systemImage: "quote.opening")
+            if let genres = viewModel.book.genres {
+                ViewThatFits {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        GenreStackView(genres: genres)
+                    }
+                }
+            }
+            HStack {
+                Button("Gengres", systemImage: "bookmark.fill") {
+                    show.toggle()
+                }
+                NavigationLink {
+                    QuotesListView(viewModel: QuotesListViewModel(book: viewModel.book))
+                } label: {
+                    let count = viewModel.book.quotes?.count ?? 0
+                    Label("^[\(count) Quotes](inflect: true)", systemImage: "quote.opening")
+                }
             }
             .buttonStyle(.bordered)
             .tint(.primary)
@@ -126,7 +142,7 @@ struct EditBookView: View {
 #Preview {
     let preview = Preview(Book.self)
     return NavigationStack {
-        EditBookView(viewModel: EditBookViewModel(book: Book.sampleBooks[4]))
+        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
             .modelContainer(preview.container)
     }
 }

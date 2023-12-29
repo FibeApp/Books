@@ -14,6 +14,8 @@ class Book {
     var recommendedBy: String = ""
     @Relationship(deleteRule: .cascade)
     var quotes: [Quote]?
+    @Relationship(inverse: \Genre.books)
+    var genres: [Genre]?
 
     init(
         title: String,

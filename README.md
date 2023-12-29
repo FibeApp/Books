@@ -6,4 +6,5 @@ Use the shortcut Control M to format the line where the cursor is to multiple li
 print(URL.applicationSupportDirectory.path(percentEncoded: false))
 ```
 
-[DBBrowser](https://sqlitebrowser.org)
+-[DBBrowser](https://sqlitebrowser.org)
+-[Converting HEX strings to UIColor and Color for UIKit and SwiftUI](https://ditto.live/blog/swift-hex-color-extension)

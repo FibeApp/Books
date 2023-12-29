@@ -71,7 +71,7 @@ struct QuotesListView: View {
 
 #Preview {
     let preview = Preview(Book.self)
-    let books = Book.sampleBooks
+    let books = Book.samples
     preview.addExamples(books)
     return NavigationStack {
         QuotesListView(viewModel: QuotesListViewModel(book: books[4]))
