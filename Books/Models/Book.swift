@@ -12,6 +12,8 @@ class Book {
     var rating: Int?
     var status: Status.RawValue
     var recommendedBy: String = ""
+    @Relationship(deleteRule: .cascade)
+    var quotes: [Quote]?
 
     init(
         title: String,

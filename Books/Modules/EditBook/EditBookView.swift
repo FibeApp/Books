@@ -52,6 +52,16 @@ struct EditBookView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             TextEditor(text: $viewModel.sinopsis)
                 .padding(5)
+            NavigationLink {
+                QuotesListView(viewModel: QuotesListViewModel(book: viewModel.book))
+            } label: {
+                let count = viewModel.book.quotes?.count ?? 0
+                Label("^[\(count) Quotes](inflect: true)", systemImage: "quote.opening")
+            }
+            .buttonStyle(.bordered)
+            .tint(.primary)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .padding(.horizontal)
         }
     }
 
