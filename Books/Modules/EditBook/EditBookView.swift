@@ -71,7 +71,7 @@ struct EditBookView: View {
                     QuotesListView(viewModel: QuotesListViewModel(book: viewModel.book))
                 } label: {
                     let count = viewModel.book.quotes?.count ?? 0
-                    Label("^[\(count) Quotes](inflect: true)", systemImage: "quote.opening")
+                    Label("\(count) Quotes", systemImage: "quote.opening")
                 }
             }
             .buttonStyle(.bordered)
@@ -139,10 +139,19 @@ struct EditBookView: View {
     }
 }
 
-#Preview {
-    let preview = Preview(Book.self)
-    return NavigationStack {
-        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
-            .modelContainer(preview.container)
-    }
-}
+//#Preview("English") {
+//    let preview = Preview(Book.self)
+//    return NavigationStack {
+//        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
+//            .modelContainer(preview.container)
+//    }
+//}
+//
+//#Preview("Russian") {
+//    let preview = Preview(Book.self)
+//    return NavigationStack {
+//        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
+//            .modelContainer(preview.container)
+//            .environment(\.locale, Locale(identifier: "RU"))
+//    }
+//}
