@@ -97,14 +97,19 @@ struct EditBookView: View {
         .onChange(of: viewModel.status, viewModel.updateDates)
     }
     var statusView: some View {
-        HStack {
-            Text("Status")
-            Picker("Status", selection: $viewModel.status) {
-                ForEach(Status.allCases) { status in
-                    Text(status.title).tag(status)
+        GroupBox {
+            LabeledContent {
+                Picker("Status", selection: $viewModel.status) {
+                    ForEach(Status.allCases) { status in
+                        Text(status.title).tag(status)
+                    }
                 }
+                .buttonStyle(.bordered)
+                .tint(.primary)
+            } label: {
+                Text("Status")
             }
-            .buttonStyle(.bordered)
+
         }
     }
 }
