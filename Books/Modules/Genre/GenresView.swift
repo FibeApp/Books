@@ -106,13 +106,13 @@ struct GenresView: View {
     }
 }
 
-#Preview {
-    let preview = Preview(Book.self)
-    let books = Book.samples
-    let genres = Genre.samples
-    preview.addExamples(genres)
-    preview.addExamples(books)
-    books[1].genres?.append(genres[0])
-    return GenresView(book: books[1])
-        .modelContainer(preview.container)
-}
+//#Preview {
+//    let preview = Preview(Book.self)
+//    let books = Book.samples
+//    let genres = Genre.samples
+//    preview.addExamples(genres)
+//    preview.addExamples(books)
+//    books[1].genres?.append(genres[0])
+//    return GenresView(book: books[1])
+//        .modelContainer(preview.container)
+//}

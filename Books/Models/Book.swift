@@ -53,7 +53,7 @@ enum Status: Int, Codable, Identifiable, CaseIterable {
 
     var id: Self { self }
 
-    var title: String {
+    var title: LocalizedStringResource {
         switch self {
         case .onShelf: "On Shelf"
         case .inProgress: "In Progress"

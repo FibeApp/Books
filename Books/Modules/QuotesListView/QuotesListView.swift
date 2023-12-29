@@ -69,12 +69,12 @@ struct QuotesListView: View {
     }
 }
 
-#Preview {
-    let preview = Preview(Book.self)
-    let books = Book.samples
-    preview.addExamples(books)
-    return NavigationStack {
-        QuotesListView(viewModel: QuotesListViewModel(book: books[4]))
-            .modelContainer(preview.container)
-    }
-}
+//#Preview {
+//    let preview = Preview(Book.self)
+//    let books = Book.samples
+//    preview.addExamples(books)
+//    return NavigationStack {
+//        QuotesListView(viewModel: QuotesListViewModel(book: books[4]))
+//            .modelContainer(preview.container)
+//    }
+//}
