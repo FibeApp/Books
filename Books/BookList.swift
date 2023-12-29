@@ -24,7 +24,7 @@ struct BookList: View {
             } else {
                 List {
                     ForEach(books) { book in
-                        NavigationLink(destination: { EditBookView(book: book)}) {
+                        NavigationLink(value: book) {
                             ExtractedView(book: book)
                         }
                     }
@@ -38,12 +38,17 @@ struct BookList: View {
                 .listStyle(.plain)
             }
         }
+        .navigationDestination(for: Book.self) { book in
+            EditBookView(viewModel: EditBookViewModel(book: book))
+        }
     }
 }
 
 #Preview {
     let preview = Preview(Book.self)
     preview.addExamples(Book.sampleBooks)
-    return BookList(sortOrder: .status, filter: "")
+    return NavigationStack {
+        BookList(sortOrder: .status, filter: "")
+    }
         .modelContainer(preview.container)
 }
