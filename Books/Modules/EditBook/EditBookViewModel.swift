@@ -1,15 +1,9 @@
-//
-//  EditBookViewModel.swift
-//  Books
-//
-//  Created by Vladimir Fibe on 27.12.2023.
-//
-
-import Foundation
+import SwiftUI
+import PhotosUI
 
 final class EditBookViewModel: ObservableObject {
     let book: Book
-    @Published var status = Status.onShelf
+    @Published var status: Status
     @Published var rating: Int?
     @Published var title = "title"
     @Published var author = ""
@@ -17,9 +11,10 @@ final class EditBookViewModel: ObservableObject {
     @Published var dateAdded = Date.distantPast
     @Published var dateStarted = Date.distantPast
     @Published var dateCompleted = Date.distantPast
-    @Published var firstView = true
     @Published var recommendedBy = ""
-
+    @Published var selectedBookCover: PhotosPickerItem?
+    @Published var selectedBookCoverData: Data?
+    
     init(book: Book) {
         self.book = book
         status = book.statusFromRaw
@@ -31,6 +26,7 @@ final class EditBookViewModel: ObservableObject {
         dateStarted = book.dateStarted
         dateCompleted = book.dateCompleted
         recommendedBy = book.recommendedBy
+        selectedBookCoverData = book.bookCover
     }
     
     func update() {
@@ -43,8 +39,9 @@ final class EditBookViewModel: ObservableObject {
         book.dateStarted = dateStarted
         book.dateCompleted = dateCompleted
         book.recommendedBy = recommendedBy
+        book.bookCover = selectedBookCoverData
     }
-
+    
     var changed: Bool {
         status != book.statusFromRaw
         || rating != book.rating
@@ -55,28 +52,26 @@ final class EditBookViewModel: ObservableObject {
         || dateStarted != book.dateStarted
         || dateCompleted != book.dateCompleted
         || recommendedBy != book.recommendedBy
+        || selectedBookCoverData != book.bookCover
     }
 
     func updateDates(oldValue: Status, newValue: Status) {
-        if !firstView {
-            if newValue == .onShelf {
-                dateStarted = Date.distantPast
-                dateCompleted = Date.distantPast
-            } else if newValue == .inProgress && oldValue == .completed {
-                // from completed to inProgress
-                dateCompleted = Date.distantPast
-            } else if newValue == .inProgress && oldValue == .onShelf {
-                // Book has been started
-                dateStarted = Date.now
-            } else if newValue == .completed && oldValue == .onShelf {
-                // Forgot to start book
-                dateCompleted = Date.now
-                dateStarted = dateAdded
-            } else {
-                // completed
-                dateCompleted = Date.now
-            }
-            firstView = false
+        if newValue == .onShelf {
+            dateStarted = Date.distantPast
+            dateCompleted = Date.distantPast
+        } else if newValue == .inProgress && oldValue == .completed {
+            // from completed to inProgress
+            dateCompleted = Date.distantPast
+        } else if newValue == .inProgress && oldValue == .onShelf {
+            // Book has been started
+            dateStarted = Date.now
+        } else if newValue == .completed && oldValue == .onShelf {
+            // Forgot to start book
+            dateCompleted = Date.now
+            dateStarted = dateAdded
+        } else {
+            // completed
+            dateCompleted = Date.now
         }
     }
 }

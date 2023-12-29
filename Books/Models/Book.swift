@@ -16,7 +16,8 @@ class Book {
     var quotes: [Quote]?
     @Relationship(inverse: \Genre.books)
     var genres: [Genre]?
-
+    @Attribute(.externalStorage)
+    var bookCover: Data?
     init(
         title: String,
         author: String,

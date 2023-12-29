@@ -44,12 +44,12 @@ struct BookList: View {
 
     }
 }
-//
-//#Preview {
-//    let preview = Preview(Book.self)
-//    preview.addExamples(Book.samples)
-//    return NavigationStack {
-//        BookList(sortOrder: .status, filter: "")
-//    }
-//        .modelContainer(preview.container)
-//}
+
+#Preview {
+    let preview = Preview(Book.self)
+    preview.addExamples(Book.samples)
+    return NavigationStack {
+        BookList(sortOrder: .status, filter: "")
+    }
+        .modelContainer(preview.container)
+}

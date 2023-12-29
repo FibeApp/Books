@@ -65,12 +65,12 @@ struct ExtractedView: View {
     }
 }
 
-//#Preview {
-//    let preview = Preview(Book.self)
-//    let books = Book.samples
-//    let genres = Genre.samples
-//    preview.addExamples(books)
-//    preview.addExamples(genres)
-//    return BookListView()
-//        .modelContainer(preview.container)
-//}
+#Preview {
+    let preview = Preview(Book.self)
+    let books = Book.samples
+    let genres = Genre.samples
+    preview.addExamples(books)
+    preview.addExamples(genres)
+    return BookListView()
+        .modelContainer(preview.container)
+}

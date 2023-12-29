@@ -15,6 +15,6 @@ struct GenreStackView: View {
     }
 }
 
-//#Preview {
-//    GenreStackView(genres: Genre.samples)
-//}
+#Preview {
+    GenreStackView(genres: Genre.samples)
+}

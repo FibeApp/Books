@@ -1,5 +1,5 @@
 import SwiftUI
-
+import PhotosUI
 struct EditBookView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: EditBookViewModel
@@ -26,6 +26,11 @@ struct EditBookView: View {
                 .buttonStyle(.borderedProminent)
             }
         }
+        .task(id: viewModel.selectedBookCover) {
+            if let data = try? await viewModel.selectedBookCover?.loadTransferable(type: Data.self) {
+                viewModel.selectedBookCoverData = data
+            }
+        }
     }
     var textsView: some View {
         GroupBox {
@@ -35,20 +40,55 @@ struct EditBookView: View {
             } label: {
                 Text("Rating")
             }
-            LabeledContent {
-                TextField("", text: $viewModel.title)
-            } label: {
-                Text("Title").foregroundStyle(.secondary)
-            }
-            LabeledContent {
-                TextField("", text: $viewModel.author)
-            } label: {
-                Text("Author").foregroundStyle(.secondary)
-            }
-            LabeledContent {
-                TextField("", text: $viewModel.recommendedBy)
-            } label: {
-                Text("Recommended By").foregroundStyle(.secondary)
+            HStack {
+                PhotosPicker(
+                    selection: $viewModel.selectedBookCover,
+                    matching: .images,
+                    photoLibrary: .shared()) {
+                        Group {
+                            if let data = viewModel.selectedBookCoverData,
+                            let uiImage = UIImage(data: data) {
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    .scaledToFill()
+                            } else {
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                        }
+                        .frame(width: 75, height: 100)
+                        .clipShape(.rect(cornerRadius: 10))
+                        .overlay(alignment: .topTrailing) {
+                            if viewModel.selectedBookCoverData != nil {
+                                Button {
+                                    viewModel.selectedBookCover = nil
+                                    viewModel.selectedBookCoverData = nil
+                                } label: {
+                                    Image(systemName: "x.circle.fill")
+                                        .foregroundStyle(.red)
+                                        .offset(x: 10.0, y: -10)
+                                }
+                            }
+                        }
+                    }
+                VStack {
+                    LabeledContent {
+                        TextField("", text: $viewModel.title)
+                    } label: {
+                        Text("Title").foregroundStyle(.secondary)
+                    }
+                    LabeledContent {
+                        TextField("", text: $viewModel.author)
+                    } label: {
+                        Text("Author").foregroundStyle(.secondary)
+                    }
+                    LabeledContent {
+                        TextField("", text: $viewModel.recommendedBy)
+                    } label: {
+                        Text("Recommended By").foregroundStyle(.secondary)
+                    }
+                }
             }
             Divider()
             Text("Sinopsis")
@@ -84,11 +124,21 @@ struct EditBookView: View {
     var datesView: some View {
         GroupBox {
             LabeledContent {
-                DatePicker(
-                    "",
-                    selection: $viewModel.dateAdded,
-                    displayedComponents: .date
-                )
+                switch viewModel.status {
+                case .onShelf:
+                    DatePicker(
+                        "",
+                        selection: $viewModel.dateAdded,
+                        displayedComponents: .date
+                    )
+                case .completed, .inProgress:
+                    DatePicker(
+                        "",
+                        selection: $viewModel.dateAdded,
+                        in: ...viewModel.dateStarted,
+                        displayedComponents: .date
+                    )
+                }
             } label: {
                 Text("Date Added")
             }
@@ -139,19 +189,19 @@ struct EditBookView: View {
     }
 }
 
-//#Preview("English") {
-//    let preview = Preview(Book.self)
-//    return NavigationStack {
-//        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
-//            .modelContainer(preview.container)
-//    }
-//}
-//
-//#Preview("Russian") {
-//    let preview = Preview(Book.self)
-//    return NavigationStack {
-//        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
-//            .modelContainer(preview.container)
-//            .environment(\.locale, Locale(identifier: "RU"))
-//    }
-//}
+#Preview("English") {
+    let preview = Preview(Book.self)
+    return NavigationStack {
+        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
+            .modelContainer(preview.container)
+    }
+}
+
+#Preview("Russian") {
+    let preview = Preview(Book.self)
+    return NavigationStack {
+        EditBookView(viewModel: EditBookViewModel(book: Book.samples[4]))
+            .modelContainer(preview.container)
+            .environment(\.locale, Locale(identifier: "RU"))
+    }
+}

@@ -111,9 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				020B664F2B3BA37B00D7AC0A /* Preview Assets.xcassets */,
-				0297507E2B3C8C2A00DD0851 /* BookSamples.swift */,
-				029750802B3C8E9100DD0851 /* PreviewContainer.swift */,
-				02F7BD2E2B3EA45600FCB12E /* GenreSamples.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -178,6 +175,9 @@
 		02F7BD242B3E8D5100FCB12E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0297507E2B3C8C2A00DD0851 /* BookSamples.swift */,
+				029750802B3C8E9100DD0851 /* PreviewContainer.swift */,
+				02F7BD2E2B3EA45600FCB12E /* GenreSamples.swift */,
 				02A4122A2B3EF57E003CB717 /* Localizable.xcstrings */,
 				02A4122C2B3F00FC003CB717 /* InfoPlist.xcstrings */,
 				020B664E2B3BA37B00D7AC0A /* Preview Content */,
@@ -446,7 +446,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Books/Books.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Books/Preview Content\"";
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
@@ -480,7 +480,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Books/Books.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Books/Preview Content\"";
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
