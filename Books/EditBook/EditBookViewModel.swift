@@ -18,6 +18,7 @@ final class EditBookViewModel: ObservableObject {
     @Published var dateStarted = Date.distantPast
     @Published var dateCompleted = Date.distantPast
     @Published var firstView = true
+    @Published var recommendedBy = ""
 
     init(book: Book) {
         self.book = book
@@ -29,6 +30,7 @@ final class EditBookViewModel: ObservableObject {
         dateAdded = book.dateAdded
         dateStarted = book.dateStarted
         dateCompleted = book.dateCompleted
+        recommendedBy = book.recommendedBy
     }
     
     func update() {
@@ -40,6 +42,7 @@ final class EditBookViewModel: ObservableObject {
         book.dateAdded = dateAdded
         book.dateStarted = dateStarted
         book.dateCompleted = dateCompleted
+        book.recommendedBy = recommendedBy
     }
 
     var changed: Bool {
@@ -51,6 +54,7 @@ final class EditBookViewModel: ObservableObject {
         || dateAdded != book.dateAdded
         || dateStarted != book.dateStarted
         || dateCompleted != book.dateCompleted
+        || recommendedBy != book.recommendedBy
     }
 
     func updateDates(oldValue: Status, newValue: Status) {

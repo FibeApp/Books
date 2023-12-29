@@ -41,8 +41,13 @@ struct EditBookView: View {
             } label: {
                 Text("Author").foregroundStyle(.secondary)
             }
+            LabeledContent {
+                TextField("", text: $viewModel.recommendedBy)
+            } label: {
+                Text("Recommended By").foregroundStyle(.secondary)
+            }
             Divider()
-            Text("Summary")
+            Text("Sinopsis")
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
             TextEditor(text: $viewModel.sinopsis)
