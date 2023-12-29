@@ -119,7 +119,6 @@ struct EditBookView: View {
             } label: {
                 Text("Status")
             }
-
         }
     }
 }
