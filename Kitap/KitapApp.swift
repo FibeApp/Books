@@ -6,7 +6,7 @@ struct KitapApp: App {
     let container: ModelContainer
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BookListView()
         }
         .modelContainer(container)
     }

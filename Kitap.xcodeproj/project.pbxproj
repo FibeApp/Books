@@ -13,8 +13,20 @@
 		0254BA982B3FB888002239BA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BA972B3FB888002239BA /* UIColor+Extension.swift */; };
 		0254BA9A2B3FB8A2002239BA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BA992B3FB8A2002239BA /* Color+Extension.swift */; };
 		0254BA9C2B3FBBC9002239BA /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BA9B2B3FBBC9002239BA /* NewBookView.swift */; };
+		0254BA9F2B3FDCA9002239BA /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BA9E2B3FDCA9002239BA /* BookList.swift */; };
+		0254BAA12B3FDD01002239BA /* BookSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAA02B3FDD01002239BA /* BookSamples.swift */; };
+		0254BAA32B3FDD35002239BA /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAA22B3FDD35002239BA /* PreviewContainer.swift */; };
+		0254BAA52B3FDD53002239BA /* GenreSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAA42B3FDD53002239BA /* GenreSamples.swift */; };
+		0254BAA72B3FDDD7002239BA /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAA62B3FDDD7002239BA /* EditBookView.swift */; };
+		0254BAA92B3FDDF6002239BA /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAA82B3FDDF6002239BA /* EditBookViewModel.swift */; };
+		0254BAAB2B3FDE23002239BA /* GenreStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAAA2B3FDE23002239BA /* GenreStackView.swift */; };
+		0254BAAD2B3FDEE3002239BA /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAAC2B3FDEE3002239BA /* GenresView.swift */; };
+		0254BAAF2B3FDF03002239BA /* NewGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAAE2B3FDF03002239BA /* NewGenreView.swift */; };
+		0254BAB12B3FDF23002239BA /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAB02B3FDF23002239BA /* RatingView.swift */; };
+		0254BAB32B3FDF45002239BA /* QuotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAB22B3FDF45002239BA /* QuotesListView.swift */; };
+		0254BAB52B3FDF69002239BA /* QuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAB42B3FDF69002239BA /* QuotesListViewModel.swift */; };
 		02EA15D72B3FB22200BEEDE4 /* KitapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA15D62B3FB22200BEEDE4 /* KitapApp.swift */; };
-		02EA15D92B3FB22200BEEDE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA15D82B3FB22200BEEDE4 /* ContentView.swift */; };
+		02EA15D92B3FB22200BEEDE4 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA15D82B3FB22200BEEDE4 /* BookListView.swift */; };
 		02EA15DB2B3FB22300BEEDE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EA15DA2B3FB22300BEEDE4 /* Assets.xcassets */; };
 		02EA15DE2B3FB22300BEEDE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EA15DD2B3FB22300BEEDE4 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -28,9 +40,21 @@
 		0254BA992B3FB8A2002239BA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		0254BA9B2B3FBBC9002239BA /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 		0254BA9D2B3FBD93002239BA /* Kitap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kitap.entitlements; sourceTree = "<group>"; };
+		0254BA9E2B3FDCA9002239BA /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
+		0254BAA02B3FDD01002239BA /* BookSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSamples.swift; sourceTree = "<group>"; };
+		0254BAA22B3FDD35002239BA /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		0254BAA42B3FDD53002239BA /* GenreSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSamples.swift; sourceTree = "<group>"; };
+		0254BAA62B3FDDD7002239BA /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
+		0254BAA82B3FDDF6002239BA /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
+		0254BAAA2B3FDE23002239BA /* GenreStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreStackView.swift; sourceTree = "<group>"; };
+		0254BAAC2B3FDEE3002239BA /* GenresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresView.swift; sourceTree = "<group>"; };
+		0254BAAE2B3FDF03002239BA /* NewGenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGenreView.swift; sourceTree = "<group>"; };
+		0254BAB02B3FDF23002239BA /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		0254BAB22B3FDF45002239BA /* QuotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListView.swift; sourceTree = "<group>"; };
+		0254BAB42B3FDF69002239BA /* QuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListViewModel.swift; sourceTree = "<group>"; };
 		02EA15D32B3FB22200BEEDE4 /* Kitap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EA15D62B3FB22200BEEDE4 /* KitapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitapApp.swift; sourceTree = "<group>"; };
-		02EA15D82B3FB22200BEEDE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		02EA15D82B3FB22200BEEDE4 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		02EA15DA2B3FB22300BEEDE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EA15DD2B3FB22300BEEDE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,8 +97,20 @@
 				0254BA952B3FB85B002239BA /* Quote.swift */,
 				0254BA972B3FB888002239BA /* UIColor+Extension.swift */,
 				0254BA992B3FB8A2002239BA /* Color+Extension.swift */,
-				02EA15D82B3FB22200BEEDE4 /* ContentView.swift */,
+				02EA15D82B3FB22200BEEDE4 /* BookListView.swift */,
+				0254BA9E2B3FDCA9002239BA /* BookList.swift */,
+				0254BAA62B3FDDD7002239BA /* EditBookView.swift */,
+				0254BAA82B3FDDF6002239BA /* EditBookViewModel.swift */,
 				0254BA9B2B3FBBC9002239BA /* NewBookView.swift */,
+				0254BAA02B3FDD01002239BA /* BookSamples.swift */,
+				0254BAA42B3FDD53002239BA /* GenreSamples.swift */,
+				0254BAA22B3FDD35002239BA /* PreviewContainer.swift */,
+				0254BAAA2B3FDE23002239BA /* GenreStackView.swift */,
+				0254BAAC2B3FDEE3002239BA /* GenresView.swift */,
+				0254BAAE2B3FDF03002239BA /* NewGenreView.swift */,
+				0254BAB02B3FDF23002239BA /* RatingView.swift */,
+				0254BAB22B3FDF45002239BA /* QuotesListView.swift */,
+				0254BAB42B3FDF69002239BA /* QuotesListViewModel.swift */,
 				02EA15DA2B3FB22300BEEDE4 /* Assets.xcassets */,
 				02EA15DC2B3FB22300BEEDE4 /* Preview Content */,
 			);
@@ -159,12 +195,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02EA15D92B3FB22200BEEDE4 /* ContentView.swift in Sources */,
+				0254BAA32B3FDD35002239BA /* PreviewContainer.swift in Sources */,
+				0254BAAB2B3FDE23002239BA /* GenreStackView.swift in Sources */,
+				02EA15D92B3FB22200BEEDE4 /* BookListView.swift in Sources */,
+				0254BAB12B3FDF23002239BA /* RatingView.swift in Sources */,
+				0254BAB32B3FDF45002239BA /* QuotesListView.swift in Sources */,
+				0254BAAF2B3FDF03002239BA /* NewGenreView.swift in Sources */,
 				0254BA9A2B3FB8A2002239BA /* Color+Extension.swift in Sources */,
 				02EA15D72B3FB22200BEEDE4 /* KitapApp.swift in Sources */,
+				0254BA9F2B3FDCA9002239BA /* BookList.swift in Sources */,
 				0254BA922B3FB814002239BA /* Book.swift in Sources */,
 				0254BA9C2B3FBBC9002239BA /* NewBookView.swift in Sources */,
+				0254BAA52B3FDD53002239BA /* GenreSamples.swift in Sources */,
+				0254BAA12B3FDD01002239BA /* BookSamples.swift in Sources */,
+				0254BAB52B3FDF69002239BA /* QuotesListViewModel.swift in Sources */,
+				0254BAAD2B3FDEE3002239BA /* GenresView.swift in Sources */,
 				0254BA982B3FB888002239BA /* UIColor+Extension.swift in Sources */,
+				0254BAA72B3FDDD7002239BA /* EditBookView.swift in Sources */,
+				0254BAA92B3FDDF6002239BA /* EditBookViewModel.swift in Sources */,
 				0254BA962B3FB85B002239BA /* Quote.swift in Sources */,
 				0254BA942B3FB838002239BA /* Genre.swift in Sources */,
 			);
