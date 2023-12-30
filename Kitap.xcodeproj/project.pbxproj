@@ -27,6 +27,7 @@
 		0254BA972B3FB888002239BA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0254BA992B3FB8A2002239BA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		0254BA9B2B3FBBC9002239BA /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
+		0254BA9D2B3FBD93002239BA /* Kitap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kitap.entitlements; sourceTree = "<group>"; };
 		02EA15D32B3FB22200BEEDE4 /* Kitap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EA15D62B3FB22200BEEDE4 /* KitapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitapApp.swift; sourceTree = "<group>"; };
 		02EA15D82B3FB22200BEEDE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 		02EA15D52B3FB22200BEEDE4 /* Kitap */ = {
 			isa = PBXGroup;
 			children = (
+				0254BA9D2B3FBD93002239BA /* Kitap.entitlements */,
 				0254BA902B3FB30E002239BA /* Info.plist */,
 				02EA15D62B3FB22200BEEDE4 /* KitapApp.swift */,
 				0254BA912B3FB814002239BA /* Book.swift */,
@@ -295,6 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kitap/Kitap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kitap/Preview Content\"";
@@ -327,6 +330,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kitap/Kitap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kitap/Preview Content\"";
