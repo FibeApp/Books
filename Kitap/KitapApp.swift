@@ -2,11 +2,11 @@ import SwiftUI
 import SwiftData
 
 @main
-struct BooksApp: App {
+struct KitapApp: App {
     let container: ModelContainer
     var body: some Scene {
         WindowGroup {
-            BookListView()
+            ContentView()
         }
         .modelContainer(container)
     }
