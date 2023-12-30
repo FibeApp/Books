@@ -25,6 +25,8 @@
 		0254BAB12B3FDF23002239BA /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAB02B3FDF23002239BA /* RatingView.swift */; };
 		0254BAB32B3FDF45002239BA /* QuotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAB22B3FDF45002239BA /* QuotesListView.swift */; };
 		0254BAB52B3FDF69002239BA /* QuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BAB42B3FDF69002239BA /* QuotesListViewModel.swift */; };
+		0254BAB72B3FE0E3002239BA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0254BAB62B3FE0E3002239BA /* Localizable.xcstrings */; };
+		0254BAB92B3FE161002239BA /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0254BAB82B3FE161002239BA /* InfoPlist.xcstrings */; };
 		02EA15D72B3FB22200BEEDE4 /* KitapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA15D62B3FB22200BEEDE4 /* KitapApp.swift */; };
 		02EA15D92B3FB22200BEEDE4 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EA15D82B3FB22200BEEDE4 /* BookListView.swift */; };
 		02EA15DB2B3FB22300BEEDE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EA15DA2B3FB22300BEEDE4 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		0254BAB02B3FDF23002239BA /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		0254BAB22B3FDF45002239BA /* QuotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListView.swift; sourceTree = "<group>"; };
 		0254BAB42B3FDF69002239BA /* QuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListViewModel.swift; sourceTree = "<group>"; };
+		0254BAB62B3FE0E3002239BA /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		0254BAB82B3FE161002239BA /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		02EA15D32B3FB22200BEEDE4 /* Kitap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EA15D62B3FB22200BEEDE4 /* KitapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitapApp.swift; sourceTree = "<group>"; };
 		02EA15D82B3FB22200BEEDE4 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			children = (
 				0254BA9D2B3FBD93002239BA /* Kitap.entitlements */,
 				0254BA902B3FB30E002239BA /* Info.plist */,
+				0254BAB62B3FE0E3002239BA /* Localizable.xcstrings */,
+				0254BAB82B3FE161002239BA /* InfoPlist.xcstrings */,
 				02EA15D62B3FB22200BEEDE4 /* KitapApp.swift */,
 				0254BA912B3FB814002239BA /* Book.swift */,
 				0254BA932B3FB838002239BA /* Genre.swift */,
@@ -167,6 +173,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 02EA15CA2B3FB22200BEEDE4;
 			productRefGroup = 02EA15D42B3FB22200BEEDE4 /* Products */;
@@ -185,6 +192,8 @@
 			files = (
 				02EA15DE2B3FB22300BEEDE4 /* Preview Assets.xcassets in Resources */,
 				02EA15DB2B3FB22300BEEDE4 /* Assets.xcassets in Resources */,
+				0254BAB92B3FE161002239BA /* InfoPlist.xcstrings in Resources */,
+				0254BAB72B3FE0E3002239BA /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +356,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Kitap/Kitap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Kitap/Preview Content\"";
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
@@ -380,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Kitap/Kitap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Kitap/Preview Content\"";
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
